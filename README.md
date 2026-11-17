@@ -92,7 +92,25 @@ JerseyAI/
 
 ---
 
-## Backend Quickstart Instructions
+## Netlify Deployment Guide
+
+The frontend is fully configured for continuous deployment on Netlify with SPA client-side routing.
+
+### Automatic Deploy (Recommended)
+1. Log into your [Netlify](https://app.netlify.com/) account.
+2. Click **"Add new site"** > **"Import an existing project"**.
+3. Choose **GitHub** and select repository `raunikvarshneyking2011-del/Jersey_Generator`.
+4. Netlify will auto-detect the configuration from `netlify.toml`:
+   - **Base directory:** `frontend`
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+5. Click **"Deploy site"**.
+
+### Environment Variables on Netlify (Optional)
+In your Netlify site settings (**Site configuration > Environment variables**):
+- `VITE_API_BASE_URL`: URL of your deployed FastAPI backend (e.g., `https://your-backend.onrender.com` or `https://your-backend.up.railway.app`). If not set, defaults to `http://localhost:8000`.
+
+---
 
 ### 1. Requirements
 - Python 3.10+ (Tested on Python 3.13)
